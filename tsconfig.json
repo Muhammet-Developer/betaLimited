@@ -13,13 +13,18 @@
     "isolatedModules": true,
     "noEmit": true,
     "jsx": "react-jsx",
-
     /* Linting */
     "strict": true,
     "noUnusedLocals": true,
     "noUnusedParameters": true,
-    "noFallthroughCasesInSwitch": true
+    "noFallthroughCasesInSwitch": true,
+    "esModuleInterop": true,
+    "baseUrl": "./",
+    "types": ["vite", "vite/client"],
+    "paths": {
+      "@/*": ["./src/*"],
   },
-  "include": ["src"],
-  "references": [{ "path": "./tsconfig.node.json" }]
+},
+"include": ["src"],
+"references": [{ "path": "./tsconfig.node.json" }]
 }
