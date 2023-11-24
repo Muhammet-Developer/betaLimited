@@ -8,6 +8,7 @@ import SearchIcon from '@mui/icons-material/Search';
 const Navbar = () => {
     const isSmallScreen = useMediaQuery('(max-width:750px)');
     const isExtraSmallScreen = useMediaQuery('(max-width:380px)');
+
     return (
         <Box sx={{ flexGrow: 1 }}>
             <AppBar position="static">
