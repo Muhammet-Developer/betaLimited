@@ -5,8 +5,6 @@ import Toolbar from '@mui/material/Toolbar';
 import Button from '@mui/material/Button';
 import { InputAdornment, TextField,useMediaQuery } from '@mui/material';
 import SearchIcon from '@mui/icons-material/Search';
-
-
 const Navbar = () => {
     const isSmallScreen = useMediaQuery('(max-width:750px)');
     const isExtraSmallScreen = useMediaQuery('(max-width:380px)');
