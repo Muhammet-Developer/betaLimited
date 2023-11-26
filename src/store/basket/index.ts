@@ -4,7 +4,7 @@ import { IModule } from '..';
 
 const initialState: IInitialStateType = {
     basketLength: 0,
-    sessionId:''
+    sessionId:'beaymp6e7'
 };
 
 export const BasketSlice = createSlice({
