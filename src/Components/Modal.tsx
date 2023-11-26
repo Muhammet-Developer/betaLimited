@@ -39,7 +39,6 @@ const Modal = ({ openModal, setOpenModal }: IProps) => {
                 <TableHead>
                   <TableRow sx={{ backgroundColor: '#EFEFEF' }}>
                     <TableCell>Name</TableCell>
-                    <TableCell align="right">Name</TableCell>
                     <TableCell align="right">Price</TableCell>
                     <TableCell align="right">Quantity</TableCell>
                   </TableRow>
@@ -53,7 +52,6 @@ const Modal = ({ openModal, setOpenModal }: IProps) => {
                       <TableCell component="th" scope="row">
                         {row?.name}
                       </TableCell>
-                      <TableCell align="right">{row?.name}</TableCell>
                       <TableCell align="right">{row?.price}</TableCell>
                       <TableCell align="right">{row?.quantity}</TableCell>
                     </TableRow>
