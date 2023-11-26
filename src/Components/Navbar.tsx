@@ -8,11 +8,11 @@ import SearchIcon from '@mui/icons-material/Search';
 import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
 import { useState } from 'react';
 import Modal from './Modal';
-import { useSelector } from 'react-redux';
-import { basketSelector } from '../store/basket';
+import { useDispatch, useSelector } from 'react-redux';
+import { SET_BASKET_LENGTH, SET_SESSION_ID, basketSelector } from '../store/basket';
 import { IListProductsType } from '@/types/Type';
 import { cartService } from '../services/cart.service';
-
+import GroupAddIcon from '@mui/icons-material/GroupAdd';
 interface IProps {
     setCardData: React.Dispatch<React.SetStateAction<IListProductsType[]>>
 }
@@ -21,7 +21,7 @@ const Navbar = ({ setCardData }: IProps) => {
     const [openModal, setOpenModal] = useState(false);
     const [search, setSearch] = useState('');
     const { basketLength } = useSelector(basketSelector);
-
+    const dispatch = useDispatch();
     const getAllProductsCarts = async () => {
         try {
             const data = await cartService.searchProducts(search);
@@ -34,6 +34,16 @@ const Navbar = ({ setCardData }: IProps) => {
     const handleSubmit = (e: any) => {
         e.preventDefault();
         getAllProductsCarts();
+    };
+
+    const newCreateSession =async ()=> {
+        try {
+            const data = await cartService.createSession();
+            dispatch(SET_SESSION_ID(data));
+            dispatch(SET_BASKET_LENGTH(0));
+        } catch (error) {
+            console.log(error);
+        }
     };
 
     return (
@@ -83,7 +93,10 @@ const Navbar = ({ setCardData }: IProps) => {
                                     }}>Search</Button>
                                 </Box>
                             </Box>
-                            <Box textAlign='center'>
+                            <Box textAlign='center' display='flex'>
+                                <Box component='div' onClick={newCreateSession} >
+                                <GroupAddIcon color='action'  sx={{ fontSize: 24,marginRight:2,cursor:'pointer' }}/>
+                                </Box>
                                 <Badge badgeContent={basketLength} color="error" onClick={() => basketLength === 0 ? setOpenModal(false) : setOpenModal(true)} sx={{ cursor: 'pointer' }}>
                                     <ShoppingCartIcon color='action' />
                                 </Badge>

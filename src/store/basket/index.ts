@@ -4,6 +4,7 @@ import { IModule } from '..';
 
 const initialState: IInitialStateType = {
     basketLength: 0,
+    sessionId:''
 };
 
 export const BasketSlice = createSlice({
@@ -13,9 +14,12 @@ export const BasketSlice = createSlice({
         SET_BASKET_LENGTH: (state, action: PayloadAction<number>) => {
             state.basketLength = action.payload;
         },
+        SET_SESSION_ID: (state, action: PayloadAction<string>) => {
+            state.sessionId = action.payload;
+        },
     }
 });
 
-export const { SET_BASKET_LENGTH } = BasketSlice.actions;
+export const { SET_BASKET_LENGTH,SET_SESSION_ID } = BasketSlice.actions;
 export const basketSelector = (state: IModule) => state.basket;
 export default BasketSlice.reducer;

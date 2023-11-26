@@ -1,7 +1,7 @@
 import { api } from './service.helpers';
 
 const createSession = async () => {
-  const data = await api.get('/createsession');
+  const { data } = await api.get('/createsession');
   return data;
 };
 const listProducts = async () => {

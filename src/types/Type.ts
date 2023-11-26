@@ -1,5 +1,6 @@
 export interface IInitialStateType {
     basketLength: number;
+    sessionId: string;
 }
 export interface IProductionCardType {
     name: string;
