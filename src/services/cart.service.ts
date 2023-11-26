@@ -1,27 +1,27 @@
 import { api } from "./service.helpers"
 
 const createSession = async ()=>{
-    const data = api.get('/createsession');
+    const data = await api.get('/createsession');
     return data;
 }
 const listProducts = async () =>{
-    const data = api.get('/products');
+    const { data } = await api.get('/products');
     return data;
 }
 const searchProducts = async (name:string) =>{
-    const data = api.get(`/search?name=${name}`);
+    const { data } = await api.get(`/search?name=${name}`);
     return data;
 }
-const addToCart = async (id:number) =>{
-    const data = api.post(`/add-to-cart?id=${id}`);
+const addToCart = async (id:string) =>{
+    const data = await api.post(`/add-to-cart?id=${id}`);
     return data;
 }
 const viewCart = async () =>{
-    const data = api.get('/view-cart');
+    const { data } = await api.get('/view-cart');
     return data;
 }
-const subtractFromCart = async (id:number) =>{
-    const data = api.post(`/subtract-from-cart?id=${id}`);
+const subtractFromCart = async (id:string) =>{
+    const data = await api.post(`/subtract-from-cart?id=${id}`);
     return data;
 }
 

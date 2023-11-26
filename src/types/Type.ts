@@ -1,6 +1,7 @@
 export interface IInitialStateType {
-    search:string
-    searchData:IListProductsType
+    basketLength:number;
+    search:string;
+    searchData:IListProductsType;
 }
 
 export interface IProductionCardType {

@@ -5,6 +5,6 @@ const baseURL = import.meta.env.VITE_BASE_URL;
 export const api = axios.create({
   baseURL,
   headers:{
-    'Session-ID':'48tggx01x'
+    'Session-ID':'wqofxxkgz'
   }
 });
