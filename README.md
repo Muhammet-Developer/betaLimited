@@ -1,6 +1,6 @@
-# BOOKS STORE
+# Case Beta Limited
 
-Book Store a web application where you can search, read, add to cart, save to cart and pay for books online
+Beta Limited a web application where you can search, add to cart, save to cart for fruit online
 
 ## Contents
 
@@ -8,7 +8,6 @@ Book Store a web application where you can search, read, add to cart, save to ca
 - [Installation](#Installation)
 - [Usage](#Usage)
 - [Features](#Features)
-- [API USED](#API-USED)
 - [LIVE DEMO](#LIVE-DEMO)
 
 
@@ -18,7 +17,7 @@ Book Store a web application where you can search, read, add to cart, save to ca
 - Redux toolkit
 - Redux-persist
 - Axios (for books api )
-- Mui
+- Mui (for ui tools)
 - Mui Icons
 - Eslint (for linting)
 - Prettier (for code formatting)
